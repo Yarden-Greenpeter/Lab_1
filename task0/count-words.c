@@ -7,7 +7,8 @@
 /* return string "word" if the count is 1 or "words" otherwise */
 char *words(int count)
 {
-  char *words = "words";
+  char *words = malloc(6);
+  strcpy(words, "words");
   if (count == 1)
     	words[strlen(words)-1] = '\0';
   
@@ -23,7 +24,7 @@ int print_word_count(char **argv)
     ++count;
   char *wordss = words(count);
   printf("The sentence contains %d %s.\n", count, wordss);
-  
+  free(wordss);
   return count;
 }
 
