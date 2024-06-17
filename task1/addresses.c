@@ -82,6 +82,15 @@ int secondary(int x)
     }
     printf("\n");
 
+    int *p;
+    printf("Uninitialized pointer p: %p\n", p);
+    /*
+    from what I observed the printf printed the value of he pointer set to a garbge address
+    this part demonstrates how C handles uninitialized pointers. 
+    It highlights the importance of initializing pointers before use to ensure predictable 
+    behavior and avoid errors.
+    */
+
     
 
 }
@@ -99,7 +108,16 @@ int main(int argc, char **argv)
     
     printf("Command line arg addresses (T1e):\n");
     /* task 1 e here */
+    printf("Address of argv: %p\n", (void*)&argv);
     
+    for (int i = 0; i < argc; i++) {
+        printf("Address of argv[%d]: %p, Content: %s\n", i, (void*)&argv[i], argv[i]);
+    }
+    /*
+    What can you say about the memory location of the command-line arguments visible in main( )?
+    the memory is stored on the stack.
+    */
+
     return 0;
 }
 
