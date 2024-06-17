@@ -65,9 +65,23 @@ int secondary(int x)
     from the output we can see that arrays are stored in contiguous memory blocks, 
     and each element's address is different by the size of the array's element type.
     */
-    
-    printf("Pointers and arrays (T1d): ");
+
     /* task 1 d here */
+    iarray2Ptr = iarray2;
+    carray2Ptr = carray2;
+    printf("Pointers and arrays (T1d): \n");
+    printf("iarray2: ");
+    for (int i = 0; i < 3; ++i) {
+        printf("%d ", *(iarray2Ptr + i));
+    }
+    printf("\n");
+
+    printf("carray2: ");
+    for (int i = 0; i < 3; ++i) {
+        printf("%c ", *(carray2Ptr + i));
+    }
+    printf("\n");
+
     
 
 }
