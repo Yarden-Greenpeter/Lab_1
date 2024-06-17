@@ -107,6 +107,7 @@ file is the base file for task 2 - you should complete it as stated in the sub t
 
 During Task 2 we read individual characters (bytes) from stdin using fgetc( )
 Please read the Deliverables section before continuing.
+-------------------------------------------
 T2a
 Implement the map function that receives a pointer to a char (a pointer to a char array), 
 an integer, and a pointer to a function. Map returns a new array 
@@ -128,6 +129,7 @@ Results:
 79 171
 21 041
 Do not forget to free allocated memory.
+-------------------------------------------
 T2b
 Implement the following functions, and test them:
 
@@ -181,6 +183,7 @@ y
 .
 Do not forget to free allocated memory.
 There is no need to encrypt letters in a cyclic manner, simply add 1.
+--------------------------------------------------------------------------------------
 Task 3 - Menu
 In this task we will be simulating objects in C. We will have a menu consisting 
 of menu "objects", each of which has a name to be printed on the menu, and a "method" 
