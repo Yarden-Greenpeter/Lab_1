@@ -136,6 +136,15 @@ Global/Static Data Addresses: Usually located in the middle memory region, where
 
     printf("- addr0: %p\n", &addr0);
     printf("- addr1: %p\n", &addr1);
+
+    /*
+    part of task 1 c here
+    The point_at function provides insights into memory layout by calculating and printing 
+    distances between key memory addresses (&addr6, &local, &foo) and a pointer p. 
+    This understanding aids in debugging and ensuring correct memory access and utilization
+    in programs. arrays are stored in contiguous memory blocks, 
+    and each element's address is different by the size of the array's element type.
+    */
 }
 
 void foo1()
