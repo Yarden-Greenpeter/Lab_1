@@ -20,10 +20,12 @@ int secondary(int x)
     int addr3;
     char *yos = "ree";
     int *addr4 = (int *)(malloc(50));
+
 	int iarray[3];
     float farray[3];
     double darray[3];
-    char carray[3]; 
+    char carray[3];
+
 	int iarray2[] = {1,2,3};
     char carray2[] = {'a','b','c'};
     int* iarray2Ptr;
@@ -53,9 +55,18 @@ int secondary(int x)
     printf("Arrays Mem Layout (T1b):\n");
 
     /* task 1 b here */
+    printf("Hexadecimal values of pointers:\n");
+
+    printf("iarray: %p, iarray+1: %p\n", (void*)iarray, (void*)(iarray+1));
+    printf("farray: %p, farray+1: %p\n", (void*)farray, (void*)(farray+1));
+    printf("darray: %p, darray+1: %p\n", (void*)darray, (void*)(darray+1));
+    printf("carray: %p, carray+1: %p\n", (void*)carray, (void*)(carray+1));
+    /*
+    from the output we can see that arrays are stored in contiguous memory blocks, 
+    and each element's address is different by the size of the array's element type.
+    */
     
     printf("Pointers and arrays (T1d): ");
-
     /* task 1 d here */
     
 
@@ -94,6 +105,34 @@ void point_at(void *p)
     
     printf("Check long type mem size (T1a):\n");
     /* part of task 1 a here */
+    /*
+Stack:
+    &argc (0x7ffd2cb6833c)
+    argv (0x7ffd2cb68458)
+    &argv (0x7ffd2cb68330)
+    &addr2 (0x7ffd2cb682d8)
+    &addr3 (0x7ffd2cb682dc)
+    &addr4 (0x7ffd2cb682e0)
+Code:
+    foo (0x5612ac6b01a9)
+    &foo1 (0x5612ac6b057f)
+    &foo1 (0x5612ac6b0599)
+    &foo2 - &foo1 (26)
+Global/Static Data:
+    yos (0x5612ac6b1008)
+    gg (0x5612ac6b3010)
+    addr4 (0x5612ae5266b0)
+    addr0 (0x5612ac6b3014)
+    addr1 (0x5612ac6b3024)
+    &addr6 (0x5612ac6b3020)
+Observations
+Stack Addresses: Typically high memory addresses and close to each other since they grow
+                 towards lower memory.
+Code Addresses:  Located in the middle to high memory regions, where the executable code 
+                 resides.
+Global/Static Data Addresses: Usually located in the middle memory region, where global 
+                              and static variables reside.
+    */
 
     printf("- addr0: %p\n", &addr0);
     printf("- addr1: %p\n", &addr1);
