@@ -58,30 +58,23 @@ int main(int argc, char **argv){
   free(arr2);*/
   //-----------------------------------------------------
   /*Test Task 2b:*/
+  /*
   int base_len = 5;
   char arr1[base_len];
-
   printf("Enter 5 characters: ");
   char* arr2 = map(arr1, base_len, my_get);
-  
-  printf("Print characters:\n");
   char* arr3 = map(arr2, base_len, cprt);
-  
-  printf("Print hexadecimal and octal representations:\n");
   char* arr4 = map(arr3, base_len, xoprt);
-  
-  printf("Encrypt characters:\n");
   char* arr5 = map(arr4, base_len, encrypt);
-  
-  printf("Print encrypted characters:\n");
   char* arr6 = map(arr5, base_len, cprt);
-
+  free(arr1);
   free(arr2);
   free(arr3);
   free(arr4);
   free(arr5);
   free(arr6);
+  */
 
-
+ 
   return 0;
 }
