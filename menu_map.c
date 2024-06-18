@@ -9,31 +9,39 @@ struct fun_desc {
 };
 
 char* map(char *array, int array_length, char (*f) (char)){
-  char* mapped_array = (char*)(malloc(array_length*sizeof(char)));
-  for (int i = 0; i < array_length; ++i) {
-      mapped_array[i] = f(array[i]);
-  }
-  return mapped_array;
+    char* mapped_array = (char*)(malloc(array_length*sizeof(char)));
+    for (int i = 0; i < array_length; ++i) {
+        mapped_array[i] = f(array[i]);
+    }
+    return mapped_array;
 }
 
 char my_get(char c){
-  return fgetc(stdin);
+    return fgetc(stdin);
 }
 
 char cprt(char c){
-  if (0x20 <= c && c <= 0x7E) printf("%c\n", c);
-  else printf(".\n");
-  return c;
+    if (0x20 <= c && c <= 0x7E) {
+        printf("%c\n", c);
+    }
+    else{
+        printf(".\n");
+    }
+    return c;
 }
 
 char encrypt(char c){
-  if (0x20 <= c && c <= 0x4E) c = c + 0x20;
-  return c;
+    if (0x20 <= c && c <= 0x4E){
+        c = c + 0x20;
+    }
+    return c;
 }
 
 char decrypt(char c){
-  if (0x40 <= c && c <= 0x7E) c = c - 0x20;
-  return c;
+    if (0x40 <= c && c <= 0x7E){
+        c = c - 0x20;
+    }
+    return c;
 }
 
 char xoprt(char c){
@@ -73,7 +81,7 @@ int main() {
         if (0 <= choice && choice < menu_length) {
             printf("Within bounds\n");
             char *clone = map(carray, 5, menu[choice].fun);
-            strcpy(carray, clone);
+            strncpy(carray, clone, 5);
             free(clone);
         } else {
             printf("Not within bounds. Exiting.\n");
