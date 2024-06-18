@@ -197,14 +197,14 @@ to an "object".
 
 The struct size equals the sum of the sizes of its objects plus alignment (if needed). 
 You can get the size by using the sizeof operator as follows: sizeof(struct struct_name).
-
+------------------------------------------------------------------------------
 T3a - Preliminary: Main Menu Loop and Terminating upon EOF.
 Write and check a program called "menu" that prints to stdout a line stating 
 "Select operation from the following menu:", reads an input line from stdin, and repeats 
 forever unless it encounters an EOF condition for stdin. In the latter case, your program 
 should exit normally.
 Recall that typing 'Ctrl+D' in the console simulates an EOF condition for stdin.
-
+------------------------------------------------------------------------------
 T3b - Implementing the menu
 In this task we will implement the menu. The menu must offer options for all your 
 functions (Get String, Print String (crpt), Print Hex (xprt), Encrypt and Decrypt). 
@@ -255,7 +255,7 @@ using 'Ctrl+D' on an empty line.
 Task3 examples can be found in the course Moodle
 
 Is it possible to call a function at an invalid address in your version of the program?
-Bonus item (0 points) Add a menu item for "junk", where the pointer to function is initialized to point to something that is not known function code, such as your fun_desc array. Compile and run the modified program, and select the junk menu item. What do you observe?
+is initialized to point to something that is not known function code, such as your fun_desc array. Compile and run the modified program, and select the junk menu item. What do you observe?Bonus item (0 points) Add a menu item for "junk", where the pointer to function 
 Optional Tasks
 Some topics in this course can be challenging, particularly for beginners , The "Optional Tasks" section of the lab is meant to encourage students to seek assistance from the TAs and to ensure you comprehend the parts do-at-home labs (in this case Lab A and Lab B) with which we believe you may face difficulties. If you and the TA have free time during the lab, you may wish to do the following tasks from these labs during lab 1.
 
@@ -270,16 +270,24 @@ Using Valgrind (Optional 3, from Lab B)
 Deliverables
 As for all labs, you should complete task 0 before the lab, and make sure you understand what you did.
 
-During the lab, you should complete all tasks, 1, 2, and 3. If you did not complete task 3 submit whatever you did complete in the lab. Your lab grade is determined and decided in most cases by your lab TA during the lab. Still, you are required to submit your code at the end of the lab, and the grade may be adjusted based on what you submit. For example, failure to quote code copied from elsewhere, even a permitted source, or written by ChatGPT, could cause a reduced grade, or worse.
+During the lab, you should complete all tasks, 1, 2, and 3. If you did not complete task 3
+submit whatever you did complete in the lab. Your lab grade is determined and decided in 
+most cases by your lab TA during the lab. Still, you are required to submit your code at 
+the end of the lab, and the grade may be adjusted based on what you submit. For example, 
+failure to quote code copied from elsewhere,even a permitted source, or written 
+by ChatGPT, could cause a reduced grade, or worse.
 
 The deliverables must be submitted until the end of the day.
 
-You must submit source files for task3 (note that task3 includes the functions in task 2) in respective folders, and also a makefile that compiles them. The source files must be organized in the following tree structure ( where '+' represents a folder and '-' represents a file):
+You must submit source files for task3 (note that task3 includes the functions in task 2)
+in respective folders, and also a makefile that compiles them. The source files must be 
+organized in the following tree structure ( where '+' represents a folder and '-' 
+represents a file):
 + task3
    - makefile
    - menu_map.c
 Submission instructions
 Create a zip file with the relevant files (only).
 Upload zip file to the submission system.
-Download the zip file from the submission system and extract its content to an empty folder.
+Download the zip file from the submission system and extract its content to an emptyfolder.
 Compile and test the code to make sure that it still works.
