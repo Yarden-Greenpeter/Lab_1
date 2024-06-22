@@ -65,7 +65,6 @@ void print_array(const char *carray, int size) {
 }
 
 int main() {
-    /*
     // Initialize char array and function descriptor array
     char *carray = (char*)(calloc(5,sizeof(char))); 
     struct fun_desc menu[] = {
@@ -80,6 +79,7 @@ int main() {
     char buffer[256];
 
     while (1) {
+        int choice;
         print_menu(menu, menu_length);
         printf("Enter your choice: \n");
 
@@ -87,66 +87,24 @@ int main() {
             printf("\nEOF detected. Exiting.\n");
             break;
         }
-        print_array(buffer, sizeof(buffer));
-        int choice = atoi(buffer);
-        if (0 <= choice && choice <= menu_length) {
+
+        sscanf(buffer, "%d", &choice);
+        if (0 <= choice && choice < menu_length) {
+            printf("Choice entered: %d\n", choice);
+            print_array(buffer, 256);
+            print_array(carray, 5);
             printf("Within bounds\n");
             char *clone = map(carray, 5, menu[choice].fun);
             free(carray);
             carray = clone;
+            if(choice == 0){
+                choice = choice + 1;
+            }
         } else {
             printf("Not within bounds. Exiting.\n");
             break;
         }
     }
     free(carray);
-    return 0;
-    */
-
-    char carray[5] = "";
-    int choice;
-
-    struct fun_desc menu[] = {
-        {"Get String", my_get},
-        {"Print String (cprt)", cprt},
-        {"Encrypt", encrypt},
-        {"Decrypt", decrypt},
-        {"Print Hex (xprt)", xoprt},
-        {NULL, NULL}
-    };
-
-    // Main menu loop
-    while (1) {
-
-        printf("Select operation from the following menu:\n");
-        for (int i = 0; menu[i].name != NULL; i++) {
-            printf("%d) %s\n", i, menu[i].name);
-        }
-        printf("Option: ");
-
-        if (scanf("%d", &choice) != 1) {
-            if (feof(stdin)) {
-                printf("\nEOF detected. Exiting...\n");
-                break;
-            } else {
-                printf("\nInvalid input. Exiting...\n");
-                break;
-            }
-        }
-
-        if (choice < 0 || menu[choice].name == NULL) {
-            printf("Not within bounds.\n");
-            break;
-        }
-
-        printf("Within bounds\n");
-        char *result = map(carray, 5, menu[choice].fun);
-        // carray = map(carray, 5, menu[choice].fun);
-
-        strncpy(carray, result, 5);
-        free(result);
-    }
-
-
     return 0;
 }
