@@ -90,9 +90,6 @@ int main() {
 
         sscanf(buffer, "%d", &choice);
         if (0 <= choice && choice < menu_length) {
-            printf("Choice entered: %d\n", choice);
-            print_array(buffer, 256);
-            print_array(carray, 5);
             printf("Within bounds\n");
             char *clone = map(carray, 5, menu[choice].fun);
             free(carray);
