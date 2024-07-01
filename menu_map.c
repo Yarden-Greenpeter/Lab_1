@@ -31,24 +31,24 @@ char cprt(char c){
 }
 
 char encrypt(char c){
-    if (0x20 <= c && c <= 0x4E){
+    if (c >= 0x20 && c <= 0x4E){
         c = c + 0x20;
     }
     return c;
 }
 
 char decrypt(char c){
-    if (0x40 <= c && c <= 0x7E){
+    if (c >= 0x40 && c <= 0x7E){
         c = c - 0x20;
     }
     return c;
 }
 
+
 char xoprt(char c){
   printf("%02x, %03o\n" ,c ,c );
   return c;
 }
-
 void print_menu(struct fun_desc menu[], int menu_length) {
     printf("Select operation from the following menu:\n");
     for (int i = 0; i < menu_length; i++) {
